@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>com_avisonav</name>
+    <creationDate>2015-02-26</creationDate>
+    <copyright>Copyright (C) 2015. Todos los derechos reservados.</copyright>
+    <license>Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt</license>
+    <author>Marlon</author>
+    <authorEmail>marlonroquiz@gmail.com</authorEmail>
+    <authorUrl>http://</authorUrl>
+    <version>1.0.0</version>
+    <description>Este componen permite mostrar los avisos a los navegantes</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>avisonav.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-US">en-US/en-US.com_avisonav.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_avisonav.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_avisonav/assets/images/s_com_avisonav.png" >COM_AVISONAV</menu>
+        <submenu>
+            
+			<menu link="option=com_avisonav&amp;view=avisos" view="avisos" img="components/com_avisonav/assets/images/s_avisos.png" alt="Avisonav/Avisos">COM_AVISONAV_TITLE_AVISOS</menu>
+
+			<menu link="option=com_avisonav&amp;view=showavisos" view="showavisos" img="components/com_avisonav/assets/images/s_showavisos.png" alt="Avisonav/Showavisos">COM_AVISONAV_TITLE_SHOWAVISOS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>avisonav.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-US">en-US/en-US.com_avisonav.ini</language>
+			<language tag="en-US">en-US/en-US.com_avisonav.sys.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_avisonav.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_avisonav.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="avisonav"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
